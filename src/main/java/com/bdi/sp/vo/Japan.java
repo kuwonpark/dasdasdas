@@ -3,7 +3,13 @@ package com.bdi.sp.vo;
 import java.util.List;
 
 public class Japan {
-
+	private String id;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	private Integer jpnum;
 	private String jpname;
 	private String jpdesc;

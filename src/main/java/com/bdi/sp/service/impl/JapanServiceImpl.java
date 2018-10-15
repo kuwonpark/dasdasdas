@@ -23,7 +23,25 @@ public class JapanServiceImpl implements JapanService {
 	@Override
 	public Japan getJapan(int jpnum) {
 		// TODO Auto-generated method stub
-		return null;
+		return jdao.getJapan(jpnum);
+	}
+
+	@Override
+	public int insertJapan(Japan j) {
+		// TODO Auto-generated method stub
+		return jdao.insertJapan(j);
+	}
+
+	@Override
+	public int deleteJapan(int jpnum) {
+		// TODO Auto-generated method stub
+		return jdao.deleteJapan(jpnum);
+	}
+
+	@Override
+	public int updateJapan(Japan j) {
+		// TODO Auto-generated method stub
+		return jdao.updateJapan(j);
 	}
 
 }
