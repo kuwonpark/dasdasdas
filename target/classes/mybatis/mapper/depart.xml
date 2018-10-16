@@ -4,36 +4,35 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bdi.sp.DepartMapper">
   <select id="selectDepartList" resultType="com.bdi.sp.vo.Depart">
-    select dino as id, d.* from depart d
+    select dino as id, d.* from depart_info d
     <where>
     	<if test="dino!=null"> and dino=#{dino}</if>
-    	<if test="diName!=null"> and diname=#{diname}</if>
-    	<if test="diDesc!=null"> and didesc=#{didesc}</if>
-    	<if test="diCnt!=null"> and dicnt=#{dicnt}</if>
+    	<if test="diname!=null"> and diname=#{diname}</if>
+    	<if test="didesc!=null"> and didesc=#{didesc}</if>
+    	<if test="dicnt!=null"> and dicnt=#{dicnt}</if>
     </where>
   </select>
   <select id="selectDepart" resultType="com.bdi.sp.vo.Depart">
-  	select *from depart
+  	select *from depart_info
   	where dino=#{dino}
   </select>
   <insert id="insertDepart">
-  	insert into depart(diname,didesc,dicnt)
+  	insert into depart_info(diname,didesc,dicnt)
   	values(#{diname},#{didesc},#{dicnt})
   </insert>
   <delete id="deleteDepart">
-  delete from depart
+  delete from depart_info
   where dino =#{dino}
   </delete>
   <update id="updateDepart">
-  update depart 
+  update depart _info
   	<set>
-  		<if test="diName!=null"> and diname=#{diname}</if>
-    	<if test="diDesc!=null"> and didesc=#{didesc}</if>
-    	<if test="diCnt!=null"> and dicnt=#{dicnt}</if>
-  		<if test="jpname!=null">jpname=#{jpname},</if>
-  		<if test="jpdesc!=null">jpdesc=#{jpdesc},</if>
+  		<if test="diname!=null">  diname=#{diname},</if>
+    	<if test="didesc!=null">  didesc=#{didesc},</if>
+    	<if test="dicnt!=null">  dicnt=#{dicnt},</if>
+  		
   	</set>
-  	where jpnum =#{jpnum}
+  	where dino =#{dino}
   </update>
   
 </mapper>
